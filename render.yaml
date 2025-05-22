@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: teams-line-bot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    autoDeploy: true
+    envVars:
+      - key: FLASK_ENV
+        value: production
+    plan: free
+    region: oregon
