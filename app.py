@@ -21,9 +21,9 @@ def callback():
 def cron():
     events = scheduler.get_upcoming_events()
     for event in events:
-        msg = f"📅 會議提醒：{event['subject']}
+        msg = f"""📅 會議提醒：{event['subject']}
 🕒 時間：{event['start']}
-🔗 連結：{event['joinUrl']}"
+🔗 連結：{event['joinUrl']}"""
         line_bot_api.push_message(GROUP_ID, TextSendMessage(text=msg))
     return "Pushed"
 
